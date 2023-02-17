@@ -4,9 +4,10 @@ const ProgressBarComponent = (props) => {
     const { color, percentage } = props;
 
   const containerStyles = {
-    height: 30,
-    backgroundColor: "#e0e0de",
-    width: '50%'
+    height: 40,
+    backgroundColor: "#fff",
+    width: '50%',
+    border:'1px solid #c1c1c1'
   }
 
   const fillerStyles = {
@@ -17,7 +18,8 @@ const ProgressBarComponent = (props) => {
     textAlign: 'center',
     transition: 'width 1s ease-in-out',
     maxWidth: '100%',
-    minWidth:'0%'
+    minWidth:'0%',
+    lineHeight:'32px'
   }
 
   const labelStyles = {
@@ -29,7 +31,7 @@ const ProgressBarComponent = (props) => {
   return (
     <div style={containerStyles}>
       <div style={fillerStyles}>
-        <span style={labelStyles}>{`${percentage}%`}</span>
+        <span className="progressPercentage" style={labelStyles}>{`${percentage}%`}</span>
       </div>
     </div>
   );
